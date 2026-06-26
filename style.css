@@ -1,0 +1,824 @@
+@font-face {
+    src: url('../dm-merab-kostava.ttf') format('truetype');
+    font-family: 'Merab Kostava';
+    font-display: swap;
+}
+
+:root {
+    --olive: #8A8D2F;
+    --brown: #5A3A22;
+    --section-pad: 128px 100px;
+    --coral: #F08B75;
+    --red: #D85A3A;
+    --cream: #FFF8F1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--cream);
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--brown);
+    font-family: 'Merab Kostava', serif;
+    min-height: 900px;
+    background: repeating-linear-gradient(
+        90deg,
+        #F6E4DD 0px,
+        #F6E4DD 120px,
+        #FFF8F1 120px,
+        #FFF8F1 240px
+    );
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(240,139,117,.15), transparent 250px),
+        radial-gradient(circle at 80% 70%, rgba(184,194,139,.15), transparent 250px);
+    inset: 0;
+    content: "";
+    z-index: -1;
+    position: fixed;
+}
+
+.header {
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+    align-items: center;
+    transition:0.3s;
+}
+
+.header > * {
+    position: relative;
+}
+
+.header.scrolled {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 248, 241, .85);
+}
+
+.logo {
+    align-items: center;
+    z-index: 1000;
+    display: flex;
+    position: relative;
+}
+
+.logo img {
+    transition: all 0.35s ease;
+    height: auto;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.12));
+    width: 128px;
+    object-fit: contain;
+}
+
+.logo img:hover {
+    transform: translateY(-3px) scale(1.04);
+}
+
+.nav-group {
+    gap: 38px;
+    align-items: center;
+    display: flex;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav a {
+    font-size: 19px;
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: var(--red);
+}
+
+.kalatisGilaki {
+    transition: transform 0.3s ease;
+    background: none;
+    border: none;
+    line-height: 0;
+    cursor: pointer;
+    position: relative;
+    padding: 4px;
+}
+
+.kalatisGilaki:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+.kalatisGilaki img {
+    width: 51px;
+    height: auto;
+}
+
+.kalatisRaodenoba {
+    color: white;
+    top: -4px;
+    height: 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    background: var(--red);
+    padding: 0 5px;
+    line-height: 20px;
+    min-width: 20px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    font-weight: 700;
+    right: -4px;
+    font-family:'Merab Kostava', serif;
+}
+
+.burgerisGilaki {
+    height: 36px;
+    background: none;
+    border: none;
+    display: none;
+    width: 36px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 6px;
+}
+
+.burgerisGilaki span {
+    height: 2px;
+    background: var(--brown);
+    display: block;
+    width: 24px;
+    border-radius: 2px;
+}
+
+.hero {
+    min-height: 900px;
+    padding: 135px 100px 80px;
+    gap: 64px;
+    position: relative;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hero-decoration {
+    gap: 16px;
+    font-size: 25px;
+    color: var(--coral);
+    display: flex;
+    left: 100px;
+    pointer-events: none;
+    top: 144px;
+    position: absolute;
+}
+
+.hero-script {
+    font-family:'Merab Kostava';
+    margin-bottom: 10px;
+    font-size: 38px;
+    color: var(--olive);
+}
+
+.hero h1 {
+    font-family:'Merab Kostava',serif;
+    line-height: 0.9;
+    margin-bottom: 25px;
+    color: var(--red);
+    font-size: 102px;
+}
+
+.hero-text {
+    max-width: 550px;
+    font-size: 23px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    flex-wrap: wrap;
+    gap: 15px;
+    display: flex;
+}
+
+.mTavariGilaki,
+.damatebitiGilaki {
+    padding: 26px 38px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 19px;
+    transition: 0.35s;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.mTavariGilaki {
+    background: var(--red);
+    color: white;
+}
+
+.damatebitiGilaki {
+    color: var(--brown);
+    background: white;
+}
+
+.mTavariGilaki:hover,
+.damatebitiGilaki:hover {
+    transform: translateY(-5px) rotate(-2deg);
+}
+
+.hero-images {
+    height: 704px;
+    position: relative;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 60px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: 0.4s;
+    position: absolute;
+    width: 320px;
+    border-radius: 10px;
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    height: 282px;
+}
+
+.polaroid:hover {
+    transform: scale(1.05);
+}
+
+.polaroid-1 {
+    left: 0;
+    top: 0;
+    rotate: -8deg;
+}
+.polaroid-2 {
+    top: 120px;
+    rotate:  7deg;
+    right: 40px;
+}
+.polaroid-3 {
+    bottom: 0;
+    left: 120px;
+    rotate: -4deg;
+}
+
+.story-section,
+.newsletter {
+    padding: var(--section-pad);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.section-title p {
+    color: var(--olive);
+    font-family:'Merab Kostava';
+    font-size: 38px;
+}
+
+.section-title h2 {
+    font-size: 77px;
+    font-family:'Merab Kostava',serif;
+    color: var(--red);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: center;
+    gap: 64px;
+}
+
+.story-image img {
+    border-radius: 35px;
+    max-width: 360px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.story-content {
+    line-height: 1.9;
+    font-size: 23px;
+}
+
+.newsletter {
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.newsletter-content p {
+    font-size: 38px;
+    font-family:'Merab Kostava';
+    color: var(--olive);
+}
+
+.newsletter-content h2 {
+    margin: 20px 0 40px;
+    font-size: 51px;
+}
+
+.newsletter form {
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.newsletter input {
+    font-size: 16px;
+    border-radius: 999px;
+    width: min(400px, 100%);
+    border: none;
+    padding: 18px;
+}
+
+.newsletter button {
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    padding: 18px 30px;
+    background: var(--red);
+    border-radius: 999px;
+    color: white;
+}
+
+.footer {
+    border-top: 1px solid rgba(90, 58, 34, .1);
+    position: relative;
+    text-align: center;
+    padding: 115px 100px 51px;
+    background: var(--cream);
+}
+
+.footer-script {
+    font-size: 32px;
+    color: var(--olive);
+    margin-bottom: 24px;
+    font-family:'Merab Kostava';
+}
+
+.footer h3 {
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 28px;
+    font-size: 64px;
+    font-family:'Merab Kostava',serif;
+}
+
+.footer-tagline {
+    color: var(--brown);
+    max-width: 460px;
+    margin: 0 auto 64px;
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+.footer-cols {
+    display: grid;
+    text-align: left;
+    border-top: 1px solid rgba(90, 58, 34, 0.12);
+    gap: 64px;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 51px;
+    margin: 0 auto 51px;
+    max-width: 600px;
+}
+
+.footer-col h4 {
+    font-family:'Merab Kostava',serif;
+    font-size: 18.4px;
+    color: var(--brown);
+    margin-bottom: 14px;
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.footer-col li, .footer-col a {
+    color: var(--brown);
+    font-size: 16px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    font-family:'Merab Kostava', serif;
+}
+
+.footer-col a:hover {
+    opacity: 1;
+    color: var(--red);
+}
+
+.floating-star {
+    font-size: 32px;
+    opacity: 0.25;
+    color: var(--red);
+    pointer-events: none;
+    position: fixed;
+}
+
+.star-1 {
+    left: 5%;
+    top: 15%;
+}
+.star-2 {
+    right: 8%;
+    top: 40%;
+}
+.star-3 {
+    left: 15%;
+    bottom: 10%;
+}
+
+.hero-content {
+    transform: translateY(40px);
+    margin-top: 54px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.khiluli {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.kalatisFoni {
+    transition: opacity 0.3s ease;
+    position: fixed;
+    background: rgba(90, 58, 34, 0.4);
+    inset: 0;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.kalatisFoni.open {
+    opacity: 1;
+}
+
+[hidden] {
+    display: none;
+}
+
+.kalatisPaneli {
+    height: 900px;
+    right: 0;
+    position: fixed;
+    top: 0;
+    background: var(--cream);
+    transform: translateX(100%);
+    display: flex;
+    width: min(380px, 1152px);
+    flex-direction: column;
+    z-index: 1001;
+    transition: transform 0.35s ease;
+    box-shadow: -15px 0 40px rgba(90, 58, 34, 0.2);
+}
+
+.kalatisPaneli.open {
+    transform: translateX(0);
+}
+
+.kalatisTavi {
+    display: flex;
+    border-bottom: 1px solid rgba(90, 58, 34, 0.12);
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.kalatisTavi h2 {
+    color: var(--red);
+    font-family:'Merab Kostava', serif;
+    font-size: 24px;
+}
+
+.dakhurvisGilaki {
+    line-height: 1;
+    font-size: 30px;
+    border: none;
+    color: var(--brown);
+    background: none;
+    cursor: pointer;
+}
+
+.kalatisSia {
+    overflow-y: auto;
+    padding: 18px 24px;
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    list-style: none;
+    gap: 16px;
+}
+
+.kalatisNivti {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(90, 58, 34, 0.1);
+    gap: 12px;
+    align-items: center;
+}
+
+.nivtisInpormacia {
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    display: flex;
+}
+
+.nivtisSakheli {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--brown);
+    font-family:'Merab Kostava', serif;
+}
+
+.nivtisFasi {
+    color: var(--olive);
+    font-size: 15px;
+}
+
+.raodenobisMartva {
+    gap: 6px;
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.raodenobisGilaki {
+    border: 1.5px solid var(--brown);
+    background: transparent;
+    color: var(--brown);
+    font-size: 16px;
+    width: 26px;
+    border-radius: 50%;
+    height: 26px;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.raodenobisGilaki:hover {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+}
+
+.raodenoba {
+    min-width: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--brown);
+}
+
+.amocilebisGilaki {
+    border: none;
+    font-size: 24px;
+    background: none;
+    line-height: 1;
+    color: var(--red);
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.carieliKalata {
+    text-align: center;
+    font-size: 17.6px;
+    padding: 50px 24px;
+    color: var(--olive);
+}
+
+.kalatisJami {
+    border-top: 1px solid rgba(90, 58, 34, 0.12);
+    padding: 22px 24px;
+}
+
+.saerToJami {
+    font-family:'Merab Kostava', serif;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    color: var(--brown);
+}
+
+.saerToJami span:last-child {
+    color: var(--red);
+}
+
+.shedzenisGilaki {
+    font-family:'Merab Kostava', serif;
+    border-radius: 999px;
+    cursor: pointer;
+    color: white;
+    padding: 14px;
+    font-size: 17px;
+    background: var(--red);
+    width: 100%;
+    border: none;
+    transition: transform 0.3s ease;
+    font-weight: 700;
+}
+
+.shedzenisGilaki:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding-right: 40px;
+        padding-top: 230px;
+        grid-template-columns: 1fr;
+        padding-left: 40px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-images {
+        height: 768px;
+        max-width: 500px;
+        width: 100%;
+        order: 2;
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .polaroid {
+        width: 448px;
+    }
+
+    .polaroid img {
+        height: 358px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        left: 0;
+        align-items: center;
+        box-shadow: 0 10px 25px rgba(90, 58, 34, .12);
+        position: absolute;
+        top: 100%;
+        background: rgba(255, 248, 241, .97);
+        gap: 18px;
+        padding: 22px 20px;
+        flex-direction: column;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        font-size: 18px;
+    }
+
+    .burgerisGilaki {
+        justify-self: center;
+        grid-column: 2;
+        display: flex;
+    }
+
+    .header {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 120px auto 120px;
+        padding: 16px 16px;
+    }
+
+    .nav-group {
+        display: contents;
+    }
+
+    .logo {
+        justify-self: start;
+        grid-column: 1;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .kalatisGilaki {
+        grid-column: 3;
+        justify-self: end;
+    }
+
+    .footer {
+        padding-bottom: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-images {
+        height: 460px;
+    }
+
+    .polaroid {
+        width: 230px;
+    }
+
+    .polaroid img {
+        height: 190px;
+    }
+
+    .polaroid-1 {
+        left: 0;
+        top: 0;
+    }
+
+    .polaroid-2 {
+        right: 0;
+        top: 90px;
+    }
+
+    .polaroid-3 {
+        bottom: 0;
+        left: 30px;
+    }
+
+    .newsletter form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 100%;
+    }
+
+    .footer-cols {
+        gap: 32px;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col ul {
+        align-items: center;
+    }
+}
