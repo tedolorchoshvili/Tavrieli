@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>თავრიელი</title>
+    <link rel="stylesheet" href="../CSS/collection.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+    <div class="floating-star star-1">✦</div>
+    <div class="floating-star star-2">✦</div>
+    <div class="floating-star star-3">✦</div>
+    
+    <header class="header">
+        <div class="logo">
+            <a href="../HTML/index.html"> 
+                <img src="../pictures/NDbq1fzKwtmNLoBOyUaHJtBnSU8gYW.png" >
+            </a>
+        </div>
+
+        <div class="nav-group">
+            <button class="burgerisGilaki" id="burgerisGilaki" aria-label="მენიუ">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="mainNav">
+                <a href="../HTML/index.html#story">ისტორია</a>
+                <a href="../HTML/collection.html">კოლექცია</a>
+                <a href="../HTML/index.html#contact">კონტაქტი</a>
+            </nav>
+
+            <button class="kalatisGilaki" id="kalatisGilaki" aria-label="კალათა">
+                <img src="../pictures/basket.png" alt="">
+                <span class="kalatisRaodenoba" id="kalatisRaodenoba">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="collection-page">
+
+        <div class="section-title">
+            <p>რჩეული ნაწარმი</p>
+            <h2>კოლექცია</h2>
+        </div>
+
+        <div class="filters">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-category="all">ყველა</button>
+                <button class="filter-btn" data-category="shoes">ფეხსაცმელი</button>
+                <button class="filter-btn" data-category="bags">ჩანთები</button>
+                <button class="filter-btn" data-category="clothing">ტანსაცმელი</button>
+                <button class="filter-btn" data-category="accessories">აქსესუარები</button>
+            </div>
+
+            <div class="fasisFiltri">
+                <label for="fasisDiapazoni">ფასი მაქს.</label>
+                <input type="range" id="fasisDiapazoni" min="0" max="350" value="350" step="5">
+                <span id="fasisMnishvneloba">₾350</span>
+            </div>
+
+        </div>
+
+        <div class="collection-grid" id="productGrid">
+
+            <div class="produqtisBarati" data-category="shoes" data-price="300">
+                <div class="produqtisSurati">
+                    <img src="../pictures/IMG_9093.jpeg" alt="Ballet point მუქი ვარდისფერი">
+                </div>
+                <div class="produqtisInpormacia">
+                    <h3>Ballet point მუქი ვარდისფერი</h3>
+                    <p class="produqtisFasi">₾ 300</p>
+                    <button class="damatebisGilaki" data-name="Ballet point მუქი ვარდისფერი" onclick="addToCart('Ballet point მუქი ვარდისფერი', 300)">კალათაში დამატება</button>
+                </div>
+            </div>
+
+            <div class="produqtisBarati" data-category="shoes" data-price="255">
+                <div class="produqtisSurati">
+                    <img src="../pictures/IMG_9097.jpeg" alt="lily with ribbon იასამნისფერი ზამშე">
+                </div>
+                <div class="produqtisInpormacia">
+                    <h3>lily with ribbon იასამნისფერი ზამშე</h3>
+                    <p class="produqtisFasi">₾ 255</p>
+                    <button class="damatebisGilaki" data-name="lily with ribbon იასამნისფერი ზამშე" onclick="addToCart('lily with ribbon იასამნისფერი ზამშე', 255)">კალათაში დამატება</button>
+                </div>
+            </div>
+
+            <div class="produqtisBarati" data-category="shoes" data-price="300">
+                <div class="produqtisSurati">
+                    <img src="../pictures/IMG_9110.jpeg" alt="Ballet point">
+                </div>
+                <div class="produqtisInpormacia">
+                    <h3>Ballet point</h3>
+                    <p class="produqtisFasi">₾ 300</p>
+                    <button class="damatebisGilaki" data-name="Ballet point" onclick="addToCart('Ballet point', 300)">კალათაში დამატება</button>
+                </div>
+            </div>
+
+            <div class="produqtisBarati" data-category="bags" data-price="125">
+                <div class="produqtisSurati">
+                    <img src="../pictures/IMG_9100.jpeg" alt="ხავერდის ჩანთა">
+                </div>
+                <div class="produqtisInpormacia">
+                    <h3>ხავერდის ჩანთა</h3>
+                    <p class="produqtisFasi">₾ 125</p>
+                    <button class="damatebisGilaki" data-name="ხავერდის ჩანთა" onclick="addToCart('ხავერდის ჩანთა', 125)">კალათაში დამატება</button>
+                </div>
+            </div>
+
+            <div class="produqtisBarati" data-category="clothing" data-price="310">
+                <div class="produqtisSurati">
+                    <img src="../pictures/B56C2E6D-F979-4ED4-9720-7175E2D1CCA1.jpeg" alt="Pink Cocktail dress">
+                </div>
+                <div class="produqtisInpormacia">
+                    <h3>Pink Cocktail dress</h3>
+                    <p class="produqtisFasi">₾ 310</p>
+                    <button class="damatebisGilaki" data-name="Pink Cocktail dress" onclick="addToCart('Pink Cocktail dress', 310)">კალათაში დამატება</button>
+                </div>
+            </div>
+
+            <div class="produqtisBarati" data-category="clothing" data-price="155">
+                <div class="produqtisSurati">
+                    <img src="../pictures/08EE70E6-7900-4929-BE0F-AA9200033B38.jpeg" alt="Embroidered T-Shirt">
+                </div>
+                <div class="produqtisInpormacia">
+                    <h3>Embroidered T-Shirt</h3>
+                    <p class="produqtisFasi">₾ 155</p>
+                    <button class="damatebisGilaki" data-name="Embroidered T-Shirt" onclick="addToCart('Embroidered T-Shirt', 155)">კალათაში დამატება</button>
+                </div>
+            </div>
+
+            <div class="produqtisBarati" data-category="accessories" data-price="65">
+                <div class="produqtisSurati">
+                    <img src="../pictures/B8F55EC4-CA44-4B2B-AA48-C6F891D3964D.jpeg" alt="Handmade Necklaces">
+                </div>
+                <div class="produqtisInpormacia">
+                    <h3>Handmade Necklaces</h3>
+                    <p class="produqtisFasi">₾ 65</p>
+                    <button class="damatebisGilaki" data-name="Handmade Necklaces" onclick="addToCart('Handmade Necklaces', 65)">კალათაში დამატება</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <p class="footer-script">✦ სიყვარულით ✦</p>
+        <h3>თავრიელი</h3>
+         <p class="footer-tagline"> თქვენი მეგზური 2019 წლიდან.</p>
+          <div class="footer-cols">
+
+            <div class="footer-col">
+                <h4>კონტაქტი</h4>
+                <ul>
+                    <li>ნაფარეული #1, თბილისი</li>
+                    <li><a href="tel:+995557628286">+995 557 62 82 86</a></li>
+                    <li><a href="mailto:tavrieli13@gmail.com">tavrieli13@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>გამოგვყევი</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/tavrieli_/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/tavrieli/">Facebook</a></li>
+                    <li><a href="https://www.tiktok.com/@tavrieli_">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+ <div class="kalatisFoni" id="kalatisFoni" hidden></div>
+    <aside class="kalatisPaneli" id="kalatisPaneli" aria-hidden="true" aria-label="კალათა">
+        <div class="kalatisTavi">
+            <h2>კალათა</h2>
+            <button class="dakhurvisGilaki" id="dakhurvisGilaki" aria-label="დახურვა">X</button>
+        </div>
+
+        <ul class="kalatisSia" id="kalatisSia"></ul>
+        <p class="carieliKalata" id="carieliKalata">კალათა ცარიელია</p>
+
+        <div class="kalatisJami">
+            <div class="saerToJami">
+                <span>ჯამი</span>
+                <span id="jamisRaodenoba">₾0</span>
+            </div>
+            <button class="shedzenisGilaki">შეძენა</button>
+        </div>
+    </aside>
+
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/collection.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+.section-title {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.section-title p {
+    color: var(--olive);
+    font-size: 38px;
+    font-family: 'Merab Kostava';
+}
+
+.section-title h2 {
+    font-size: 77px;
+    color: var(--red);
+    font-family:'Merab Kostava',serif;
+}
+
+.collection-page {
+    padding: 126px 100px 128px;
+}
+
+.filters {
+    margin-bottom: 77px;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 14px 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-btn {
+    color: var(--brown);
+    background: transparent;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--brown);
+    border-radius: 999px;
+    font-weight: 600;
+    padding: 10px 22px;
+    font-family: 'Merab Kostava', serif;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: white;
+}
+
+.fasisFiltri {
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    font-family: 'Merab Kostava', serif;
+    color: var(--brown);
+    gap: 12px;
+}
+
+.fasisFiltri input[type="range"] {
+    accent-color: var(--red);
+    cursor: pointer;
+}
+
+#fasisMnishvneloba {
+    color: var(--red);
+    font-weight: 700;
+    min-width: 52px;
+}
+
+.collection-grid {
+    gap: 38px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: grid;
+    justify-content: start;
+}
+
+.produqtisBarati {
+    position: relative;
+    flex-direction: column;
+    transition: 0.3s;
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    background: white;
+}
+
+.produqtisBarati::before {
+    left: 50%;
+    width: 80px;
+    background: rgba(255,255,255,0.7);
+    transform: translateX(-50%) rotate(-5deg);
+    content: "";
+    height: 25px;
+    position: absolute;
+    top: -10px;
+}
+
+.produqtisBarati:hover {
+    transform: translateY(-10px);
+}
+
+.produqtisSurati img {
+    width: 100%;
+    object-fit: cover;
+    height: 384px;
+    border-radius: 20px;
+}
+
+.produqtisInpormacia {
+    flex-direction: column;
+    display: flex;
+    padding: 15px 5px 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.produqtisInpormacia h3 {
+    font-family:'Merab Kostava', serif;
+    margin-bottom: 8px;
+    margin-top: 0;
+    color: var(--brown);
+    font-size: 26px;
+    overflow: hidden;
+    line-height: 1.25;
+}
+
+.produqtisFasi {
+    font-family:'Merab Kostava', serif;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--red);
+}
+
+.produqtisInpormacia .damatebisGilaki {
+    margin-top: auto;
+}
+
+.damatebisGilaki { 
+    font-family:'Merab Kostava', serif;
+    background: transparent;
+    border-radius: 999px;
+    width: 100%;
+    padding: 12px 20px;
+    color: var(--brown);
+    font-weight: 600;
+    border: 2px solid var(--brown);
+    transition: all 0.35s ease;
+    min-height: 44px;
+    font-size: 16px;
+}
+
+.damatebisGilaki:hover {
+    box-shadow: 0 8px 20px rgba(216,90,58,0.3);
+    transform: translateY(-3px);
+    color: white;
+    border-color: var(--red);
+    background: var(--red);
+}
+
+.damatebisGilaki.added {
+    border-color: var(--olive);
+    color: white;
+    background: var(--olive);
+}
+
+.kalatisFoni {
+    background: rgba(90, 58, 34, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: fixed;
+    inset: 0;
+}
+
+.kalatisFoni.open {
+    opacity: 1;
+}
+
+[hidden] {
+    display: none;
+}
+
+.kalatisPaneli { 
+    display: flex;
+    right: 0;
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+    height: 900px;
+    box-shadow: -15px 0 40px rgba(90, 58, 34, 0.2);
+    transform: translateX(100%);
+    background: var(--cream);
+    width: min(380px, 1152px);
+    flex-direction: column;
+    transition: transform 0.35s ease;
+}
+
+.kalatisPaneli.open {
+    transform: translateX(0);
+}
+
+.kalatisTavi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(90, 58, 34, 0.12);
+    padding: 24px;  
+}
+
+.kalatisTavi h2 {
+    font-size: 24px;
+    color: var(--red);
+    font-family:'Merab Kostava', serif;
+}
+
+.dakhurvisGilaki {
+    border: none;
+    font-size: 30px;
+    background: none;
+    line-height: 1;
+    color: var(--brown);
+}
+
+.kalatisSia {
+    flex-direction: column;
+    overflow-y: auto;
+    display: flex;
+    flex: 1;
+    padding: 18px 24px;
+    list-style: none;
+    gap: 16px;
+}
+
+.kalatisNivti {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(90, 58, 34, 0.1);
+    padding-bottom: 16px;
+    gap: 12px;
+}
+
+.nivtisInpormacia {
+    flex: 1;
+    gap: 6px;
+    flex-direction: column;
+    display: flex;
+}
+
+.nivtisSakheli {
+    font-weight: 700;
+    font-family:'Merab Kostava', serif;
+    font-size: 17px;
+    color: var(--brown);
+}
+
+.nivtisFasi {
+    font-size: 15px;
+    color: var(--olive);
+}
+
+.raodenobisMartva {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.raodenobisGilaki {
+    width: 26px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1.5px solid var(--brown);
+    color: var(--brown);
+    height: 26px;
+    line-height: 1;
+    background: transparent;
+}
+
+.raodenobisGilaki:hover {
+    border-color: var(--red);
+    background: var(--red);
+    color: white;
+}
+
+.raodenoba {
+    color: var(--brown);
+    font-weight: 700;
+    min-width: 22px;
+    text-align: center;
+}
+
+.amocilebisGilaki {
+    font-size: 24px;
+    padding: 4px 8px;
+    background: none;
+    color: var(--red);
+    border: none;
+    line-height: 1;
+}
+
+.carieliKalata {
+    padding: 50px 24px;
+    color: var(--olive);
+    text-align: center;
+    font-size: 17px;
+}
+
+.kalatisJami {
+    padding: 22px 24px;
+    border-top: 1px solid rgba(90, 58, 34, 0.12);
+}
+
+.saerToJami {
+    color: var(--brown);
+    margin-bottom: 16px;
+    align-items: center;
+    font-size: 20px;
+    font-family:'Merab Kostava', serif;
+    justify-content: space-between;
+    display: flex;
+}
+
+.saerToJami span:last-child {
+    color: var(--red);
+}
+
+.shedzenisGilaki {
+    padding: 14px;
+    font-weight: 700;
+    color: white;
+    background: var(--red);
+    border-radius: 999px;
+    transition: transform 0.3s ease;
+    border: none;
+    width: 100%;
+    font-size: 16.8px;
+    font-family:'Merab Kostava', serif;
+}
+
+.shedzenisGilaki:hover {
+    transform: translateY(-2px);
+}
+
+
+
+@media (max-width: 900px) {
+     .filters {
+        flex-direction: column;
+    }
+
+    .collection-page {
+        padding: 120px 24px 64px;
+    }
+
+    .produqtisInpormacia h3 {
+        font-size: 30px;
+        overflow-wrap: break-word;
+    }
+    .collection-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    
+    .collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-cols {
+        text-align: center;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-col ul {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .collection-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .collection-page {
+        padding: 100px 24px 64px;
+    }
+
+    .produqtisInpormacia h3 {
+        font-size: 22px;
+        overflow-wrap: break-word;
+    }
+}
